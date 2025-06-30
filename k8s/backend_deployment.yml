@@ -1,0 +1,43 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: backend-deployment
+  namespace: exam
+  labels:
+    app: backapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backapp
+  template:
+    metadata:
+      labels:
+        app: backapp
+    spec:
+      containers:
+      - name: back-cont
+        image: swayamnakshane/back2:latest
+        ports:
+          - containerPort: 5000
+        env:
+        - name: MYSQL_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: exam-configmap
+              key: MYSQL_HOST
+        - name: MYSQL_USER
+          valueFrom:
+            configMapKeyRef:
+              name: exam-configmap
+              key: MYSQL_USER
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: exam-configmap
+              key: MYSQL_DATABASE
+        - name: JWT_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: exam-secret
+              key: JWT_SECRET_KEY
