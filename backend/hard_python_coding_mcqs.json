@@ -1,0 +1,4202 @@
+[
+  {
+    "id": 1,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 2,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dictionary Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 3,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dictionary Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 4,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 5,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 6,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Custom Exceptions",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 7,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 8,
+    "question": "What will be the output of the following code?\n\ndef decorator(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs) * 2\n    return wrapper\n\n@decorator\ndef add(x, y):\n    return x + y\n\nprint(add(3, 4))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Decorators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 9,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 10,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 11,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dictionary Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 12,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 13,
+    "question": "What will be the output of the following code?\n\nclass Manager:\n    def __enter__(self):\n        print(\"Enter\")\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Exit\")\n\nwith Manager():\n    print(\"Inside block\")",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Context Managers",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 14,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dictionary Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 15,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 16,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 17,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 18,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 19,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 20,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 21,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 22,
+    "question": "What will be the output of the following code?\n\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Line1\\nLine2\")\nwith open(\"test.txt\", \"r\") as f:\n    lines = f.readlines()\nprint(lines[1])",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "File Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 23,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.203840"
+  },
+  {
+    "id": 24,
+    "question": "What will be the output of the following code?\n\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 2\n\ngen = count_up_to(5)\nprint(next(gen))\nprint(next(gen))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Generators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 25,
+    "question": "What will be the output of the following code?\n\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 2\n\ngen = count_up_to(5)\nprint(next(gen))\nprint(next(gen))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Generators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 26,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Custom Exceptions",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 27,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 28,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dictionary Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 29,
+    "question": "What will be the output of the following code?\n\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Line1\\nLine2\")\nwith open(\"test.txt\", \"r\") as f:\n    lines = f.readlines()\nprint(lines[1])",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "File Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 30,
+    "question": "What will be the output of the following code?\n\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 2\n\ngen = count_up_to(5)\nprint(next(gen))\nprint(next(gen))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Generators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 31,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 32,
+    "question": "What will be the output of the following code?\n\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 2\n\ngen = count_up_to(5)\nprint(next(gen))\nprint(next(gen))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Generators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 33,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 34,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 35,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 36,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 37,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 38,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 39,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 40,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 41,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 42,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 43,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 44,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dictionary Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 45,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 46,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 47,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 48,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 49,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 50,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 51,
+    "question": "What will be the output of the following code?\n\ntry:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    result = 'Infinity'\nfinally:\n    print(\"Done\")\n\nprint(result)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Error Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 52,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 53,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 54,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 55,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 56,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 57,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 58,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 59,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 60,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 61,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 62,
+    "question": "What will be the output of the following code?\n\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Line1\\nLine2\")\nwith open(\"test.txt\", \"r\") as f:\n    lines = f.readlines()\nprint(lines[1])",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "File Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 63,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 64,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 65,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 66,
+    "question": "What will be the output of the following code?\n\nclass Manager:\n    def __enter__(self):\n        print(\"Enter\")\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Exit\")\n\nwith Manager():\n    print(\"Inside block\")",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Context Managers",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 67,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 68,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 69,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 70,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Custom Exceptions",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 71,
+    "question": "What will be the output of the following code?\n\ndef decorator(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs) * 2\n    return wrapper\n\n@decorator\ndef add(x, y):\n    return x + y\n\nprint(add(3, 4))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Decorators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 72,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dictionary Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 73,
+    "question": "What will be the output of the following code?\n\ntry:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    result = 'Infinity'\nfinally:\n    print(\"Done\")\n\nprint(result)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Error Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 74,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 75,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 76,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 77,
+    "question": "What will be the output of the following code?\n\ntry:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    result = 'Infinity'\nfinally:\n    print(\"Done\")\n\nprint(result)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Error Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 78,
+    "question": "What will be the output of the following code?\n\ndef outer(x):\n    def inner(y):\n        return x + y\n    return inner\n\nadd_five = outer(5)\nprint(add_five(10))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Closures",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 79,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 80,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 81,
+    "question": "What will be the output of the following code?\n\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Line1\\nLine2\")\nwith open(\"test.txt\", \"r\") as f:\n    lines = f.readlines()\nprint(lines[1])",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "File Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 82,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 83,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 84,
+    "question": "What will be the output of the following code?\n\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Line1\\nLine2\")\nwith open(\"test.txt\", \"r\") as f:\n    lines = f.readlines()\nprint(lines[1])",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "File Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 85,
+    "question": "What will be the output of the following code?\n\nclass Manager:\n    def __enter__(self):\n        print(\"Enter\")\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Exit\")\n\nwith Manager():\n    print(\"Inside block\")",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Context Managers",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 86,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 87,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 88,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 89,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 90,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 91,
+    "question": "What will be the output of the following code?\n\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 2\n\ngen = count_up_to(5)\nprint(next(gen))\nprint(next(gen))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Generators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 92,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 93,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 94,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 95,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 96,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 97,
+    "question": "What will be the output of the following code?\n\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 2\n\ngen = count_up_to(5)\nprint(next(gen))\nprint(next(gen))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Generators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 98,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 99,
+    "question": "What will be the output of the following code?\n\nclass Manager:\n    def __enter__(self):\n        print(\"Enter\")\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Exit\")\n\nwith Manager():\n    print(\"Inside block\")",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Context Managers",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 100,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 101,
+    "question": "What will be the output of the following code?\n\ndef decorator(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs) * 2\n    return wrapper\n\n@decorator\ndef add(x, y):\n    return x + y\n\nprint(add(3, 4))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Decorators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 102,
+    "question": "What will be the output of the following code?\n\ndef outer(x):\n    def inner(y):\n        return x + y\n    return inner\n\nadd_five = outer(5)\nprint(add_five(10))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Closures",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 103,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 104,
+    "question": "What will be the output of the following code?\n\ndef decorator(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs) * 2\n    return wrapper\n\n@decorator\ndef add(x, y):\n    return x + y\n\nprint(add(3, 4))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Decorators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 105,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 106,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 107,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 108,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 109,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 110,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 111,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 112,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 113,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 114,
+    "question": "What will be the output of the following code?\n\nclass Manager:\n    def __enter__(self):\n        print(\"Enter\")\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Exit\")\n\nwith Manager():\n    print(\"Inside block\")",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Context Managers",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 115,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 116,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 117,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 118,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 119,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 120,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 121,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 122,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 123,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 124,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 125,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 126,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 127,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dictionary Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 128,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 129,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 130,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Custom Exceptions",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 131,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 132,
+    "question": "What will be the output of the following code?\n\ndef outer(x):\n    def inner(y):\n        return x + y\n    return inner\n\nadd_five = outer(5)\nprint(add_five(10))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Closures",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 133,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 134,
+    "question": "What will be the output of the following code?\n\nclass Manager:\n    def __enter__(self):\n        print(\"Enter\")\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Exit\")\n\nwith Manager():\n    print(\"Inside block\")",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Context Managers",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 135,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 136,
+    "question": "What will be the output of the following code?\n\ndef outer(x):\n    def inner(y):\n        return x + y\n    return inner\n\nadd_five = outer(5)\nprint(add_five(10))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Closures",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 137,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 138,
+    "question": "What will be the output of the following code?\n\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Line1\\nLine2\")\nwith open(\"test.txt\", \"r\") as f:\n    lines = f.readlines()\nprint(lines[1])",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "File Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 139,
+    "question": "What will be the output of the following code?\n\ndef outer(x):\n    def inner(y):\n        return x + y\n    return inner\n\nadd_five = outer(5)\nprint(add_five(10))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Closures",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 140,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 141,
+    "question": "What will be the output of the following code?\n\ntry:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    result = 'Infinity'\nfinally:\n    print(\"Done\")\n\nprint(result)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Error Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 142,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 143,
+    "question": "What will be the output of the following code?\n\ntry:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    result = 'Infinity'\nfinally:\n    print(\"Done\")\n\nprint(result)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Error Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 144,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 145,
+    "question": "What will be the output of the following code?\n\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 2\n\ngen = count_up_to(5)\nprint(next(gen))\nprint(next(gen))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Generators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 146,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 147,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 148,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 149,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 150,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 151,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 152,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 153,
+    "question": "What will be the output of the following code?\n\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Line1\\nLine2\")\nwith open(\"test.txt\", \"r\") as f:\n    lines = f.readlines()\nprint(lines[1])",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "File Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 154,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 155,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 156,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 157,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 158,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 159,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 160,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 161,
+    "question": "What will be the output of the following code?\n\ndef decorator(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs) * 2\n    return wrapper\n\n@decorator\ndef add(x, y):\n    return x + y\n\nprint(add(3, 4))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Decorators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 162,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 163,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 164,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 165,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 166,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 167,
+    "question": "What will be the output of the following code?\n\ndef outer(x):\n    def inner(y):\n        return x + y\n    return inner\n\nadd_five = outer(5)\nprint(add_five(10))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Closures",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 168,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 169,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 170,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 171,
+    "question": "What will be the output of the following code?\n\nclass Manager:\n    def __enter__(self):\n        print(\"Enter\")\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Exit\")\n\nwith Manager():\n    print(\"Inside block\")",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Context Managers",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 172,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 173,
+    "question": "What will be the output of the following code?\n\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Line1\\nLine2\")\nwith open(\"test.txt\", \"r\") as f:\n    lines = f.readlines()\nprint(lines[1])",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "File Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 174,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 175,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 176,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 177,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 178,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 179,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 180,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 181,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Custom Exceptions",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 182,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 183,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 184,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 185,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 186,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 187,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 188,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 189,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 190,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 191,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 192,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 193,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 194,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 195,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 196,
+    "question": "What will be the output of the following code?\n\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Line1\\nLine2\")\nwith open(\"test.txt\", \"r\") as f:\n    lines = f.readlines()\nprint(lines[1])",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "File Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 197,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 198,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 199,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 200,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 201,
+    "question": "What will be the output of the following code?\n\nclass Manager:\n    def __enter__(self):\n        print(\"Enter\")\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Exit\")\n\nwith Manager():\n    print(\"Inside block\")",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Context Managers",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 202,
+    "question": "What will be the output of the following code?\n\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 2\n\ngen = count_up_to(5)\nprint(next(gen))\nprint(next(gen))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Generators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 203,
+    "question": "What will be the output of the following code?\n\ndef outer(x):\n    def inner(y):\n        return x + y\n    return inner\n\nadd_five = outer(5)\nprint(add_five(10))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Closures",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 204,
+    "question": "What will be the output of the following code?\n\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 2\n\ngen = count_up_to(5)\nprint(next(gen))\nprint(next(gen))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Generators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 205,
+    "question": "What will be the output of the following code?\n\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Line1\\nLine2\")\nwith open(\"test.txt\", \"r\") as f:\n    lines = f.readlines()\nprint(lines[1])",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "File Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 206,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 207,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 208,
+    "question": "What will be the output of the following code?\n\ndef decorator(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs) * 2\n    return wrapper\n\n@decorator\ndef add(x, y):\n    return x + y\n\nprint(add(3, 4))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Decorators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 209,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 210,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 211,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 212,
+    "question": "What will be the output of the following code?\n\ndef outer(x):\n    def inner(y):\n        return x + y\n    return inner\n\nadd_five = outer(5)\nprint(add_five(10))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Closures",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 213,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 214,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 215,
+    "question": "What will be the output of the following code?\n\ndef decorator(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs) * 2\n    return wrapper\n\n@decorator\ndef add(x, y):\n    return x + y\n\nprint(add(3, 4))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Decorators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 216,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 217,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 218,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Custom Exceptions",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 219,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dictionary Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 220,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 221,
+    "question": "What will be the output of the following code?\n\nclass Manager:\n    def __enter__(self):\n        print(\"Enter\")\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Exit\")\n\nwith Manager():\n    print(\"Inside block\")",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Context Managers",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 222,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 223,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 224,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dictionary Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 225,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 226,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 227,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 228,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 229,
+    "question": "What will be the output of the following code?\n\ntry:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    result = 'Infinity'\nfinally:\n    print(\"Done\")\n\nprint(result)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Error Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 230,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Custom Exceptions",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 231,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 232,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 233,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 234,
+    "question": "What will be the output of the following code?\n\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 2\n\ngen = count_up_to(5)\nprint(next(gen))\nprint(next(gen))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Generators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 235,
+    "question": "What will be the output of the following code?\n\ntry:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    result = 'Infinity'\nfinally:\n    print(\"Done\")\n\nprint(result)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Error Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 236,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 237,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 238,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 239,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Custom Exceptions",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 240,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Custom Exceptions",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 241,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 242,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 243,
+    "question": "What will be the output of the following code?\n\nclass Manager:\n    def __enter__(self):\n        print(\"Enter\")\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Exit\")\n\nwith Manager():\n    print(\"Inside block\")",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Context Managers",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 244,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dictionary Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 245,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 246,
+    "question": "What will be the output of the following code?\n\ntry:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    result = 'Infinity'\nfinally:\n    print(\"Done\")\n\nprint(result)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Error Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 247,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 248,
+    "question": "What will be the output of the following code?\n\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Line1\\nLine2\")\nwith open(\"test.txt\", \"r\") as f:\n    lines = f.readlines()\nprint(lines[1])",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "File Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 249,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 250,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 251,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 252,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 253,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 254,
+    "question": "What will be the output of the following code?\n\ndef decorator(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs) * 2\n    return wrapper\n\n@decorator\ndef add(x, y):\n    return x + y\n\nprint(add(3, 4))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Decorators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 255,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 256,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 257,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 258,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 259,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 260,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 261,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 262,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 263,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 264,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 265,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 266,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 267,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 268,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 269,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 270,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 271,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Recursion",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 272,
+    "question": "What will be the output of the following code?\n\nclass Manager:\n    def __enter__(self):\n        print(\"Enter\")\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Exit\")\n\nwith Manager():\n    print(\"Inside block\")",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Context Managers",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 273,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 274,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 275,
+    "question": "What will be the output of the following code?\n\nimport re\ntext = \"My phone number is 9876543210\"\nmatch = re.search(r\"\\d{10}\", text)\nprint(match.group())",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Regex",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 276,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Descriptors",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 277,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Metaclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 278,
+    "question": "What will be the output of the following code?\n\nclass Manager:\n    def __enter__(self):\n        print(\"Enter\")\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Exit\")\n\nwith Manager():\n    print(\"Inside block\")",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Context Managers",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 279,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Itertools",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 280,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 281,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 282,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 283,
+    "question": "What will be the output of the following code?\n\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 2\n\ngen = count_up_to(5)\nprint(next(gen))\nprint(next(gen))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Generators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 284,
+    "question": "What will be the output of the following code?\n\ndef count_up_to(n):\n    i = 0\n    while i < n:\n        yield i\n        i += 2\n\ngen = count_up_to(5)\nprint(next(gen))\nprint(next(gen))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Generators",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 285,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 286,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Set Operations",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 287,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Custom Exceptions",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 288,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 289,
+    "question": "What will be the output of the following code?\n\ndef outer(x):\n    def inner(y):\n        return x + y\n    return inner\n\nadd_five = outer(5)\nprint(add_five(10))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Closures",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 290,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Function Overloading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 291,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 292,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 293,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 294,
+    "question": "What will be the output of the following code?\n\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Line1\\nLine2\")\nwith open(\"test.txt\", \"r\") as f:\n    lines = f.readlines()\nprint(lines[1])",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "File Handling",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 295,
+    "question": "What will be the output of the following code?\n\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: int\n    y: int\n\np = Point(2, 3)\nprint(p.x + p.y)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dataclasses",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 296,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multithreading",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 297,
+    "question": "What will be the output of the following code?\n\nclass A:\n    def __init__(self):\n        self.val = 5\n\n    def __str__(self):\n        return str(self.val)\n\na = A()\nprint(a)",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "OOP",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 298,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "List Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 299,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Multiprocessing",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  },
+  {
+    "id": 300,
+    "question": "What will be the output of the following code?\n\ndef mystery(n):\n    if n <= 1:\n        return 1\n    return n * mystery(n - 1)\n\nprint(mystery(5))",
+    "options": [
+      "A: Correct output is printed",
+      "B: An error occurs during execution",
+      "C: Unexpected output due to logic error",
+      "D: Program crashes silently"
+    ],
+    "answer": "A",
+    "topic": "Dictionary Comprehension",
+    "difficulty": "Hard",
+    "created_at": "2025-07-03T16:02:03.204979"
+  }
+]

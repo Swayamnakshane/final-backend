@@ -47,3 +47,10 @@ candidate_bp.add_url_rule(
     view_func=candidate_views.SubmitExamAPI.as_view("submit_exam_api"),
     methods=["POST"]
 )
+
+candidate_bp.add_url_rule(
+    "/log_tab_switch",
+    view_func=candidate_views.TabSwitching.as_view("tab_switching_api"),
+    methods=["POST"]
+)
+

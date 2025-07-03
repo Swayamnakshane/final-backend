@@ -1,5 +1,5 @@
 from flask import jsonify, request
-from ..models import  db, Candidate,Batch, AssignedMCQ, CandidateAnswer, CandidateExamStatus
+from ..models import  db, Candidate,Batch, AssignedMCQ, CandidateAnswer, CandidateExamStatus,PythonMCQ
 from flask.views import MethodView
 from flask_bcrypt import Bcrypt
 import random
@@ -42,12 +42,17 @@ class CandidateLoginAPI(MethodView):
         candidate.last_login_at = datetime.now(IST)
         db.session.commit()
 
+        # Get first assigned batch
+        batch_id = candidate.batches[0].batch_id if candidate.batches else None
+
         # Check if exam already submitted
-        exam_status = CandidateExamStatus.query.filter_by(
-            candidate_id=candidate.candidate_id,
-            batch_id=candidate.batch_id
-        ).first()
-        is_submitted = exam_status.is_submitted if exam_status else False
+        is_submitted = False
+        if batch_id:
+            exam_status = CandidateExamStatus.query.filter_by(
+                candidate_id=candidate.candidate_id,
+                batch_id=batch_id
+            ).first()
+            is_submitted = exam_status.is_submitted if exam_status else False
 
         # Generate access token
         access_token = create_access_token(identity=candidate.user_id)
@@ -56,7 +61,7 @@ class CandidateLoginAPI(MethodView):
             "message": "Login successful",
             "access_token": access_token,
             "candidate_name": candidate.name,
-            "batch_id": candidate.batch_id,
+            "batch_id": batch_id,
             "is_submitted": is_submitted
         }), 200
 
@@ -70,17 +75,19 @@ class CandidateProfileAPI(MethodView):
         if not candidate:
             return jsonify({"error": "Candidate not found"}), 404
 
-        batch = Batch.query.filter_by(batch_id=candidate.batch_id).first()
-        if not batch:
-            return jsonify({"error": "Batch data not found"}), 404
+        if not candidate.batches:
+            return jsonify({"error": "Candidate is not assigned to any batch"}), 404
+
+        batch = candidate.batches[0]  # Assuming one batch per candidate for now
 
         return jsonify({
             "candidate_name": candidate.name,
             "batch_title": batch.title,
             "exam_start_date": batch.start_date.strftime("%d-%m-%Y"),
             "exam_end_date": batch.end_date.strftime("%d-%m-%Y"),
-            "exam_duration": batch.exam_duration  # integer minutes
+            "exam_duration": batch.exam_duration  # in minutes
         }), 200
+
 
 class CandidateMcqsAPI(MethodView):
     @jwt_required()
@@ -107,6 +114,7 @@ class CandidateMcqsAPI(MethodView):
         return jsonify({
             "mcqs": mcqs
         }), 200
+
         
 from flask.views import MethodView
 from flask_jwt_extended import jwt_required, get_jwt_identity
@@ -125,7 +133,6 @@ class CandidateSaveAnswerAPI(MethodView):
         if not data or 'question_id' not in data or 'answer' not in data:
             return jsonify({"error": "Invalid input"}), 400
 
-        # Fetch candidate from token user_id
         candidate = Candidate.query.filter_by(user_id=user_id).first()
         if not candidate:
             return jsonify({"error": "Candidate not found"}), 404
@@ -133,16 +140,22 @@ class CandidateSaveAnswerAPI(MethodView):
         question_id = data['question_id']
         selected_option = data['answer']
 
-        # Ensure this question is assigned to this candidate
+        # Verify question is assigned to candidate
         assigned = AssignedMCQ.query.filter_by(
             candidate_id=candidate.candidate_id,
             question_id=question_id
         ).first()
-
         if not assigned:
             return jsonify({"error": "Question not assigned to candidate"}), 403
 
-        # Check if answer already exists
+        # Fetch the actual MCQ to get the correct answer
+        question = PythonMCQ.query.get(question_id)
+        if not question:
+            return jsonify({"error": "Question not found"}), 404
+
+        actual_answer = question.answer
+
+        # Save or update the answer
         existing = CandidateAnswer.query.filter_by(
             candidate_id=candidate.candidate_id,
             question_id=question_id
@@ -152,45 +165,52 @@ class CandidateSaveAnswerAPI(MethodView):
             existing.selected_option = selected_option
             existing.answered_at = datetime.now(IST)
             existing.is_saved = True
+            existing.total_marks = 1 if selected_option == actual_answer else 0
         else:
             new_answer = CandidateAnswer(
                 candidate_id=candidate.candidate_id,
                 question_id=question_id,
+                actual_answer=actual_answer,
                 selected_option=selected_option,
                 is_saved=True,
+                total_marks=1 if selected_option == actual_answer else 0,
                 answered_at=datetime.now(IST)
             )
             db.session.add(new_answer)
 
         db.session.commit()
         return jsonify({"message": "Answer saved successfully"}), 200
-    
+
+
+
+
 class GetAllAnswersAPI(MethodView):
     @jwt_required()
     def get(self):
         user_id = get_jwt_identity()
 
-        # Fetch the candidate using user_id
+        # Fetch candidate by user_id
         candidate = Candidate.query.filter_by(user_id=user_id).first()
         if not candidate:
             return jsonify({"error": "Candidate not found"}), 404
 
-        # Get all answers by this candidate
+        # Fetch all answers for the candidate
         answers = CandidateAnswer.query.filter_by(candidate_id=candidate.candidate_id).all()
         if not answers:
             return jsonify({"message": "No answers found for this candidate"}), 200
 
-        # Format the answers for response
+        # Prepare answer list
         answer_list = []
         for answer in answers:
             answer_list.append({
                 "question_id": answer.question_id,
                 "selected_option": answer.selected_option,
                 "is_saved": answer.is_saved,
-                "answered_at": answer.answered_at.strftime("%Y-%m-%d %H:%M:%S")
+                "answered_at": answer.answered_at.strftime("%d-%m-%Y %H:%M:%S") if answer.answered_at else None
             })
 
         return jsonify({"answers": answer_list}), 200
+
 
 
 IST = timezone('Asia/Kolkata')
@@ -200,35 +220,45 @@ class StartExamAPI(MethodView):
     def post(self):
         user_id = get_jwt_identity()
 
+        # Get candidate
         candidate = Candidate.query.filter_by(user_id=user_id).first()
         if not candidate:
             return jsonify({"error": "Candidate not found"}), 404
 
-        if not candidate.batch_id:
-            return jsonify({"error": "Candidate not assigned to a batch"}), 400
+        # Ensure candidate has a batch
+        if not candidate.batches or len(candidate.batches) == 0:
+            return jsonify({"error": "Candidate not assigned to any batch"}), 400
 
-        # 🔒 Check if already submitted
-        already_submitted = CandidateExamStatus.query.filter_by(
+        # Assuming only one batch assigned
+        batch = candidate.batches[0]
+
+        # Check if exam is already submitted
+        submitted_status = CandidateExamStatus.query.filter_by(
             candidate_id=candidate.candidate_id,
-            batch_id=candidate.batch_id,
+            batch_id=batch.batch_id,
             is_submitted=True
         ).first()
-        if already_submitted:
+
+        if submitted_status:
             return jsonify({"error": "You have already submitted this exam."}), 403
 
-        # ✅ Allow resume if started but not submitted
-        ongoing_exam = CandidateExamStatus.query.filter_by(
+        # Check if exam is already started but not submitted
+        ongoing_status = CandidateExamStatus.query.filter_by(
             candidate_id=candidate.candidate_id,
-            batch_id=candidate.batch_id,
+            batch_id=batch.batch_id,
             is_submitted=False
         ).first()
-        if ongoing_exam:
-            return jsonify({"message": "Exam already started."}), 200
+
+        if ongoing_status:
+            return jsonify({
+                "message": "Exam already started.",
+                "started_at": ongoing_status.started_at.strftime("%Y-%m-%d %H:%M:%S")
+            }), 200
 
         # Start new exam session
         new_status = CandidateExamStatus(
             candidate_id=candidate.candidate_id,
-            batch_id=candidate.batch_id,
+            batch_id=batch.batch_id,
             started_at=datetime.now(IST),
             is_submitted=False
         )
@@ -236,6 +266,9 @@ class StartExamAPI(MethodView):
         db.session.commit()
 
         return jsonify({"message": "Exam started successfully."}), 200
+
+
+IST = timezone("Asia/Kolkata")
 
 class SubmitExamAPI(MethodView):
     @jwt_required()
@@ -246,50 +279,109 @@ class SubmitExamAPI(MethodView):
         if not candidate:
             return jsonify({"error": "Candidate not found"}), 404
 
-        exam_status = CandidateExamStatus.query.filter_by(
+        if not candidate.batches:
+            return jsonify({"error": "Candidate not assigned to any batch"}), 400
+
+        batch = candidate.batches[0]
+
+        status = CandidateExamStatus.query.filter_by(
             candidate_id=candidate.candidate_id,
-            is_submitted=False
+            batch_id=batch.batch_id
         ).first()
 
-        if not exam_status:
-            return jsonify({
-                "message": "No ongoing exam found or exam already submitted."
-            }), 400
+        if not status:
+            return jsonify({"error": "Exam session not started"}), 404
 
-        batch = Batch.query.filter_by(batch_id=exam_status.batch_id).first()
-        if not batch:
-            return jsonify({"error": "Batch not found"}), 404
+        if status.is_submitted:
+            return jsonify({"message": "Exam already submitted"}), 200
 
-        started_at = exam_status.started_at
+        answers = CandidateAnswer.query.filter_by(candidate_id=candidate.candidate_id).all()
+
+        correct = 0
+        wrong = 0
+        total_marks = 0
+        total_questions = len(answers)
+
+        for ans in answers:
+            if ans.selected_option:
+                if ans.selected_option == ans.actual_answer:
+                    correct += 1
+                    total_marks += 1
+                else:
+                    wrong += 1
+
         ended_at = datetime.now(IST)
 
-        # Ensure timezone consistency
-        if started_at.tzinfo is None:
-            started_at = IST.localize(started_at)
+        # Convert ended_at to naive if started_at is naive
+        time_taken = int(((ended_at.replace(tzinfo=None)) - status.started_at).total_seconds() // 60)
 
-        elapsed_minutes = (ended_at - started_at).total_seconds() / 60
-        duration_status = "within time" if elapsed_minutes <= batch.exam_duration else "exceeded time"
+        status.correct_answers = correct
+        status.wrong_answers = wrong
+        status.total_questions = total_questions
+        status.marks_obtained = total_marks
+        status.ended_at = ended_at
+        status.time_taken = time_taken
+        status.is_submitted = True
 
-        # Get answered vs assigned
-        assigned_q_ids = {
-            a.question_id for a in AssignedMCQ.query.filter_by(candidate_id=candidate.candidate_id).all()
-        }
-        saved_q_ids = {
-            a.question_id for a in CandidateAnswer.query.filter_by(
-                candidate_id=candidate.candidate_id, is_saved=True
-            ).all()
-        }
-
-        unanswered_ids = assigned_q_ids - saved_q_ids
-
-        # Update submission status
-        exam_status.is_submitted = True
-        exam_status.ended_at = ended_at
         db.session.commit()
 
         return jsonify({
-            "message": "Exam submitted successfully.",
-            "exam_duration_used_minutes": round(elapsed_minutes, 2),
-            "duration_status": duration_status,
-            "unanswered_question_ids": list(unanswered_ids)
+            "message": "Exam submitted successfully",
+            "correct_answers": correct,
+            "wrong_answers": wrong,
+            "marks_obtained": total_marks,
+            "total_questions": total_questions,
+            "time_taken": time_taken
+        }), 200
+
+
+# class TabSwitching(MethodView):
+#     @jwt_required()
+    
+
+#     def log_tab_switch():
+#         user_id = get_jwt_identity()
+#         timestamp = datetime.now()
+
+#         candidate = Candidate.query.filter_by(user_id=user_id).first()
+#         if not candidate:
+#             return jsonify({"error": "Candidate not found"}), 404
+
+#         candidate.tab_switch_count += 1
+#         db.session.commit()
+
+#         # Optional: Also log in a separate table or MongoDB if needed
+#         # db.tab_switch_logs.insert_one({ "user_id": user_id, "timestamp": timestamp })
+
+#         # Example: Disqualify after 3 tab switches
+#         if candidate.tab_switch_count >= 3:
+#             candidate.is_active = False
+#             db.session.commit()
+#             return jsonify({
+#                 "message": "Disqualified for switching tabs too many times.",
+#                 "disqualified": True
+#             }), 403
+
+#         return jsonify({
+#             "message": "Tab switch logged",
+#             "tab_switch_count": candidate.tab_switch_count,
+#             "disqualified": False
+#         }), 200
+
+class TabSwitching(MethodView):
+    @jwt_required()
+    def post(self):
+        user_id = get_jwt_identity()
+        timestamp = datetime.now()
+
+        candidate = Candidate.query.filter_by(user_id=user_id).first()
+        if not candidate:
+            return jsonify({"error": "Candidate not found"}), 404
+
+        candidate.tab_switch_count += 1
+        db.session.commit()
+
+        return jsonify({
+            "message": "Tab switch logged",
+            "tab_switch_count": candidate.tab_switch_count
         }), 200

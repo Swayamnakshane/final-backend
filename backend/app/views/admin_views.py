@@ -1,5 +1,5 @@
 from flask import jsonify, request
-from ..models import Admin, db,PythonMCQ , Batch , Candidate, BatchQuestion, AssignedMCQ, CandidateAnswer, CandidateExamStatus
+from ..models import Admin, db,PythonMCQ , Batch , Candidate, BatchQuestion, AssignedMCQ, CandidateAnswer, CandidateExamStatus, ExamCategory
 from flask.views import MethodView
 from flask_bcrypt import Bcrypt
 import random
@@ -399,9 +399,7 @@ class GetAdminByObjectId(MethodView):
             return jsonify({'error': 'An unexpected error occurred.', 'details': str(e)}), 500
 
 
-from flask import request, jsonify
-from flask.views import MethodView
-from flask_jwt_extended import jwt_required, get_jwt_identity
+
 from werkzeug.utils import secure_filename
 from datetime import datetime
 from pytz import timezone
@@ -432,7 +430,21 @@ class UploadMCQAPI(MethodView):
         filepath = os.path.join(UPLOAD_FOLDER, filename)
         file.save(filepath)
 
+        # Get category_name and description from form-data
+        category_name = request.form.get("category_name")
+        description = request.form.get("description", "")
+
+        if not category_name:
+            return jsonify({"message": "category_name is required"}), 400
+
         try:
+            # Check if category exists, else create
+            category = ExamCategory.query.filter_by(category_name=category_name).first()
+            if not category:
+                category = ExamCategory(category_name=category_name, description=description)
+                db.session.add(category)
+                db.session.flush()
+
             with open(filepath, 'r', encoding='utf-8') as f:
                 mcq_data = json.load(f)
 
@@ -444,15 +456,18 @@ class UploadMCQAPI(MethodView):
                     topic=item['topic'],
                     difficulty=item['difficulty'],
                     created_at=datetime.now(IST),
-                    created_by=admin_id
+                    created_by=admin_id,
+                    category_id=category.id
                 )
                 db.session.add(mcq)
 
             db.session.commit()
-            return jsonify({"message": f"{len(mcq_data)} MCQs uploaded successfully"}), 201
+            return jsonify({"message": f"{len(mcq_data)} MCQs uploaded successfully under category '{category_name}'"}), 201
 
         except Exception as e:
+            db.session.rollback()
             return jsonify({"message": "Failed to process file", "error": str(e)}), 500
+
 
 
 
@@ -595,10 +610,11 @@ class CreateBatch(MethodView):
                     email=email,
                     user_id=user_id,
                     password=raw_password,
-                    batch_id=batch.batch_id,
                     created_at=datetime.now(IST)
                 )
+                candidate.batches.append(batch)
                 db.session.add(candidate)
+
 
                 try:
                     send_exam_email(
@@ -667,13 +683,6 @@ class GetBatchCandidates(MethodView):
             "total_candidates": batch.total_candidates,
             "candidates": candidate_list
         }), 200
-import math
-from sqlalchemy import func
-import math
-from sqlalchemy import func
-from flask.views import MethodView
-from flask_jwt_extended import jwt_required
-from flask import request, jsonify
 
 from flask.views import MethodView
 from flask_jwt_extended import jwt_required, get_jwt_identity
@@ -694,28 +703,23 @@ class AssignMCQsToBatch(MethodView):
             data = request.get_json()
             total_questions = int(data.get('num_questions', 10))
 
-            # Define difficulty distribution
-            easy_count = int(total_questions * 0.4)
-            medium_count = int(total_questions * 0.3)
-            hard_count = total_questions - easy_count - medium_count
+            candidates = Candidate.query.filter(
+                Candidate.batches.any(Batch.batch_id == batch_id)
+            ).all()
 
-            candidates = Candidate.query.filter_by(batch_id=batch_id).all()
             if not candidates:
                 return jsonify({"error": "No candidates in this batch"}), 400
 
             for candidate in candidates:
-                # Get random questions by difficulty
-                easy_qs = PythonMCQ.query.filter_by(difficulty='Easy').order_by(func.rand()).limit(easy_count).all()
-                medium_qs = PythonMCQ.query.filter_by(difficulty='Medium').order_by(func.rand()).limit(medium_count).all()
-                hard_qs = PythonMCQ.query.filter_by(difficulty='Hard').order_by(func.rand()).limit(hard_count).all()
+                # Only fetch Hard MCQs
+                hard_qs = PythonMCQ.query.filter_by(difficulty='Hard').order_by(func.rand()).limit(total_questions).all()
 
-                selected = easy_qs + medium_qs + hard_qs
-                if len(selected) < total_questions:
+                if len(hard_qs) < total_questions:
                     return jsonify({
-                        "error": f"Not enough MCQs available for candidate {candidate.name}"
+                        "error": f"Not enough Hard MCQs available for candidate {candidate.name}"
                     }), 400
 
-                for mcq in selected:
+                for mcq in hard_qs:
                     if not mcq.batch_id:
                         mcq.batch_id = batch_id
                         db.session.add(mcq)
@@ -730,12 +734,18 @@ class AssignMCQsToBatch(MethodView):
 
             db.session.commit()
             return jsonify({
-                "message": f"{total_questions} MCQs assigned to {len(candidates)} candidates in batch '{batch.title}'"
+                "message": f"{total_questions} Hard MCQs assigned to {len(candidates)} candidates in batch '{batch.title}'"
             }), 200
 
         except Exception as e:
             db.session.rollback()
             return jsonify({"error": str(e)}), 500
+
+from flask.views import MethodView
+from flask_jwt_extended import jwt_required
+from flask import jsonify
+from app.models import Batch, Candidate, CandidateAnswer, CandidateExamStatus
+from datetime import datetime
 
 class AdminGetResults(MethodView):
     @jwt_required()
@@ -745,40 +755,54 @@ class AdminGetResults(MethodView):
             if not batch:
                 return jsonify({"error": "Batch not found"}), 404
 
-            candidates = Candidate.query.filter_by(batch_id=batch_id).all()
+            candidates = batch.candidates  # Many-to-many relationship
             if not candidates:
                 return jsonify({"message": "No candidates found for this batch"}), 200
 
             results = []
             for candidate in candidates:
                 answers = CandidateAnswer.query.filter_by(candidate_id=candidate.candidate_id).all()
-                
-                # Compare selected_option with actual answer
-                score = sum(
-                    1 for ans in answers 
-                    if ans.selected_option and ans.selected_option == ans.question.answer
-                )
 
-                total_attempted = len([a for a in answers if a.selected_option])
+                correct = 0
+                wrong = 0
+                attempted = 0
 
-                # Fetch candidate exam status
-                exam_status_record = CandidateExamStatus.query.filter_by(
+                for ans in answers:
+                    if ans.selected_option:
+                        attempted += 1
+                        # Compare with actual answer
+                        if ans.question and ans.selected_option.strip().upper() == ans.question.answer.strip().upper():
+                            correct += 1
+                        else:
+                            wrong += 1
+
+                total_questions = len(answers)
+                unattempted = total_questions - attempted
+
+                exam_status = CandidateExamStatus.query.filter_by(
                     candidate_id=candidate.candidate_id,
                     batch_id=batch_id
                 ).first()
 
-                is_submitted = exam_status_record.is_submitted if exam_status_record else False
-
                 results.append({
+                    "candidate_id": candidate.candidate_id,
                     "candidate_name": candidate.name,
                     "user_id": candidate.user_id,
-                    "score": score,
-                    "attempted": total_attempted,
-                    "exam_status": "Submitted" if is_submitted else "Not Submitted"
+                    "attempted": attempted,
+                    "unattempted": unattempted,
+                    "wrong": wrong,
+                    "correct": correct,
+                    "total_questions": total_questions,
+                    "exam_status": "Submitted" if exam_status and exam_status.is_submitted else "Not Submitted",
+                    "marks_obtained": exam_status.marks_obtained if exam_status else 0,
+                    "time_taken": exam_status.time_taken if exam_status else 0,
+                    "started_at": exam_status.started_at.strftime('%Y-%m-%d %H:%M:%S') if exam_status and exam_status.started_at else None,
+                    "ended_at": exam_status.ended_at.strftime('%Y-%m-%d %H:%M:%S') if exam_status and exam_status.ended_at else None
                 })
 
             return jsonify({
                 "batch_title": batch.title,
+                "batch_id": batch.batch_id,
                 "results": results
             }), 200
 
