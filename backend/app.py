@@ -2,140 +2,175 @@ import json
 import random
 from datetime import datetime
 
-# Topics to cover for hard-level Python coding MCQs
+# Topics for hard-level Python coding MCQs
 topics = [
     "Recursion", "OOP", "Closures", "Decorators", "Generators", "Context Managers",
-    "Metaclasses", "Descriptors", "Multithreading", "Multiprocessing", "Error Handling",
-    "Function Overloading", "Custom Exceptions", "File Handling", "Regex", "List Comprehension",
-    "Dictionary Comprehension", "Set Operations", "Itertools", "Dataclasses"
+    "Error Handling", "File Handling", "Regex", "Dataclasses"
+]
+
+# Code templates (8 lines each)
+code_templates = {
+    "Recursion": """
+def factorial(n):
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(3))
+print(factorial(4))
+print(factorial(5))
+""",
+
+    "OOP": """
+class A:
+    def __init__(self):
+        self.x = 10
+
+    def display(self):
+        print(self.x)
+
+a = A()
+a.display()
+""",
+
+    "Closures": """
+def multiplier(factor):
+    def multiply(x):
+        return x * factor
+    return multiply
+
+double = multiplier(2)
+triple = multiplier(3)
+print(double(5), triple(5))
+""",
+
+    "Decorators": """
+def uppercase(func):
+    def wrapper():
+        return func().upper()
+    return wrapper
+
+@uppercase
+def greet():
+    return "hello"
+
+print(greet())
+""",
+
+    "Generators": """
+def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
+
+gen = countdown(3)
+print(next(gen))
+print(next(gen))
+""",
+
+    "Context Managers": """
+class Test:
+    def __enter__(self):
+        print("Enter")
+        return "Inside"
+    def __exit__(self, *args):
+        print("Exit")
+
+with Test() as val:
+    print(val)
+""",
+
+    "Error Handling": """
+try:
+    a = 10
+    b = 0
+    result = a / b
+except ZeroDivisionError:
+    print("Division by zero")
+else:
+    print(result)
+finally:
+    print("Cleanup done")
+""",
+
+    "File Handling": """
+with open("sample.txt", "w") as f:
+    f.write("Line1\\nLine2\\nLine3")
+
+with open("sample.txt", "r") as f:
+    lines = f.readlines()
+
+print(lines[0].strip())
+""",
+
+    "Regex": """
+import re
+text = "Call me at 9123456789 or 8123456780"
+pattern = r"\\b\\d{10}\\b"
+matches = re.findall(pattern, text)
+
+for num in matches:
+    print(num)
+""",
+
+    "Dataclasses": """
+from dataclasses import dataclass
+
+@dataclass
+class Book:
+    title: str
+    pages: int
+
+b = Book("Python", 300)
+print(b.title)
+print(b.pages)
+"""
+}
+
+# Answer style pool
+option_phrases = [
+    "Code runs and prints correct output",
+    "An exception is raised",
+    "Nothing is printed",
+    "Logical error but no exception",
+    "Both A and B",
+    "None of the above",
+    "Only B is true",
+    "Output depends on Python version"
 ]
 
 # Generate one MCQ
 def generate_hard_mcq(q_id):
-    code_templates = {
-        "Recursion": """
-def mystery(n):
-    if n <= 1:
-        return 1
-    return n * mystery(n - 1)
-
-print(mystery(5))
-""",
-        "OOP": """
-class A:
-    def __init__(self):
-        self.val = 5
-
-    def __str__(self):
-        return str(self.val)
-
-a = A()
-print(a)
-""",
-        "Closures": """
-def outer(x):
-    def inner(y):
-        return x + y
-    return inner
-
-add_five = outer(5)
-print(add_five(10))
-""",
-        "Decorators": """
-def decorator(func):
-    def wrapper(*args, **kwargs):
-        return func(*args, **kwargs) * 2
-    return wrapper
-
-@decorator
-def add(x, y):
-    return x + y
-
-print(add(3, 4))
-""",
-        "Generators": """
-def count_up_to(n):
-    i = 0
-    while i < n:
-        yield i
-        i += 2
-
-gen = count_up_to(5)
-print(next(gen))
-print(next(gen))
-""",
-        "Context Managers": """
-class Manager:
-    def __enter__(self):
-        print("Enter")
-        return self
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        print("Exit")
-
-with Manager():
-    print("Inside block")
-""",
-        "Error Handling": """
-try:
-    result = 10 / 0
-except ZeroDivisionError:
-    result = 'Infinity'
-finally:
-    print("Done")
-
-print(result)
-""",
-        "File Handling": """
-with open("test.txt", "w") as f:
-    f.write("Line1\\nLine2")
-with open("test.txt", "r") as f:
-    lines = f.readlines()
-print(lines[1])
-""",
-        "Regex": """
-import re
-text = "My phone number is 9876543210"
-match = re.search(r"\\d{10}", text)
-print(match.group())
-""",
-        "Dataclasses": """
-from dataclasses import dataclass
-
-@dataclass
-class Point:
-    x: int
-    y: int
-
-p = Point(2, 3)
-print(p.x + p.y)
-"""
-    }
-
     topic = random.choice(topics)
-    code = code_templates.get(topic, list(code_templates.values())[0])
-    options = [
-        "Correct output is printed",
-        "An error occurs during execution",
-        "Unexpected output due to logic error",
-        "Program crashes silently"
-    ]
-    correct_answer = "A"
+    code = code_templates[topic].strip()
+
+    # Pick 3 normal + 1 confusing option
+    base_opts = random.sample(option_phrases[:4], 3)
+    tricky_opt = random.choice(option_phrases[4:])
+    all_opts = base_opts + [tricky_opt]
+    random.shuffle(all_opts)
+
+    # Format options A-D
+    formatted_options = [f"{chr(65+i)}: {opt}" for i, opt in enumerate(all_opts)]
+
+    # Randomly assign a correct one (placeholder, not evaluated)
+    correct_option = random.choice(["A", "B", "C", "D"])
+
     return {
         "id": q_id,
-        "question": f"What will be the output of the following code?\n\n{code.strip()}",
-        "options": [f"{chr(65 + i)}: {opt}" for i, opt in enumerate(options)],
-        "answer": correct_answer,
+        "question": f"What will be the output of the following Python code?\n\n{code}",
+        "options": formatted_options,
+        "answer": correct_option,
         "topic": topic,
         "difficulty": "Hard",
         "created_at": datetime.now().isoformat()
     }
 
-# Generate 300 hard-level questions
-hard_mcqs = [generate_hard_mcq(i + 1) for i in range(300)]
+# Generate 300 MCQs
+mcqs = [generate_hard_mcq(i + 1) for i in range(300)]
 
-# Save to JSON file
-file_path = "hard_python_coding_mcqs.json"
-with open(file_path, "w") as f:
-    json.dump(hard_mcqs, f, indent=2)
+# Save to JSON
+with open("hard_python_coding_mcqs.json", "w") as f:
+    json.dump(mcqs, f, indent=2)
 
-file_path
+print("✅ Saved 300 hard-level Python MCQs to 'hard_python_coding_mcqs.json'")

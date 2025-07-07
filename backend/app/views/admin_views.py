@@ -485,11 +485,11 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 # Constants
-SMTP_SERVER = 'smtp.gmail.com'
-SMTP_PORT = 587
-SMTP_EMAIL = 'madhu.amunik@gmail.com'
-SMTP_PASSWORD = 'jwtthzobwzfiwzey'
-EXAM_LINK = 'https://yourdomain.com/exam/login'
+SMTP_SERVER = 'arcap.info'
+SMTP_PORT = 465
+SMTP_EMAIL = 'hra@arcap.info'
+SMTP_PASSWORD = 'Ganesh@arcap2025'
+EXAM_LINK = 'http://34.219.21.193:3000/'
 
 # Helper: Generate user_id
 def generate_user_id(name, number):

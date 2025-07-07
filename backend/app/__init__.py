@@ -1,45 +1,39 @@
 from flask import Flask, jsonify
-from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from flask_jwt_extended.exceptions import NoAuthorizationError, JWTDecodeError
+from flask_migrate import Migrate
 
 from .config import Config
 from .models import db
 from .routes.admin_routes import admin_bp
-from .routes.candidate_routes import candidate_bp  # Import your candidate routes
-
-from flask_migrate import Migrate
+from .routes.candidate_routes import candidate_bp
 
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
+    # ✅ Initialize Extensions
     db.init_app(app)
-    from flask_cors import CORS
-
-# Inside create_app()
-    CORS(app, supports_credentials=True, origins="*")  # Allow all origins
-
-
     migrate = Migrate(app, db)
-
+    CORS(app, supports_credentials=True, origins="*")
     jwt = JWTManager(app)
 
+    # ✅ Register Blueprints
+    app.register_blueprint(admin_bp, url_prefix='/admin')
+    app.register_blueprint(candidate_bp, url_prefix='/candidate')
 
+    # ✅ Error Handlers
     @app.errorhandler(NoAuthorizationError)
     def handle_missing_token(e):
-        return jsonify({'message': 'Token is missing.'}), 401
+        return jsonify({'error': 'Token is missing or expired.'}), 401
 
     @app.errorhandler(JWTDecodeError)
     def handle_invalid_token(e):
-        return jsonify({'message': 'Token is invalid.'}), 401
+        return jsonify({'error': 'Invalid token format.'}), 401
 
-    app.register_blueprint(admin_bp, url_prefix='/admin')
-    app.register_blueprint(candidate_bp, url_prefix='/candidate')  
-    
-
+    # ✅ Optional: Create DB Tables (for dev only)
     with app.app_context():
         db.create_all()
 
