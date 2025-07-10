@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 import urllib.parse
+from datetime import timezone, timedelta
 
 load_dotenv()
 
@@ -17,5 +18,8 @@ class Config:
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY')
+   
+IST = timezone(timedelta(hours=5, minutes=30))
+
 
 

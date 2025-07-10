@@ -4,7 +4,8 @@ from sqlalchemy.dialects.mysql import JSON
 from enum import Enum
 
 db = SQLAlchemy()
-utc_now = lambda: datetime.now(timezone.utc)
+IST = timezone(timedelta(hours=5, minutes=30))
+ist_now = lambda: datetime.now(IST)
 
 # ---------------- ENUMS ----------------
 class GenderEnum(Enum):
@@ -37,9 +38,9 @@ class Admin(db.Model):
     otp = db.Column(db.String(6))
     is_active = db.Column(db.Boolean, default=True)
     is_verified = db.Column(db.Boolean, default=False)
-    created_at = db.Column(db.DateTime, default=utc_now)
-    updated_at = db.Column(db.DateTime, default=utc_now, onupdate=utc_now)
-    otp_expiry = db.Column(db.DateTime, default=lambda: utc_now() + timedelta(minutes=10))
+    created_at = db.Column(db.DateTime, default=ist_now)
+    updated_at = db.Column(db.DateTime, default=ist_now, onupdate=ist_now)
+    otp_expiry = db.Column(db.DateTime, default=lambda: ist_now() + timedelta(minutes=10))
 
     batches = db.relationship('Batch', backref='admin', lazy=True)
     mcqs_created = db.relationship('PythonMCQ', backref='creator', lazy=True)
@@ -51,8 +52,8 @@ class ExamCategory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     category_name = db.Column(db.String(100), unique=True, nullable=False)
     description = db.Column(db.Text)
-    created_at = db.Column(db.DateTime, default=utc_now)
-    updated_at = db.Column(db.DateTime, default=utc_now, onupdate=utc_now)
+    created_at = db.Column(db.DateTime, default=ist_now)
+    updated_at = db.Column(db.DateTime, default=ist_now, onupdate=ist_now)
 
 # ---------------- Batch (Exam) ----------------
 class Batch(db.Model):
@@ -61,11 +62,11 @@ class Batch(db.Model):
     title = db.Column(db.String(100), unique=True, nullable=False)
     keywords = db.Column(JSON)
     total_candidates = db.Column(db.Integer, default=0)
-    exam_duration = db.Column(db.Integer, default=60)  # in minutes
+    exam_duration = db.Column(db.Integer, default=60)
     start_date = db.Column(db.Date, nullable=False)
     end_date = db.Column(db.Date, nullable=False)
     created_by = db.Column(db.Integer, db.ForeignKey('admins.admin_id'), nullable=False)
-    created_at = db.Column(db.DateTime, default=utc_now)
+    created_at = db.Column(db.DateTime, default=ist_now)
     is_active = db.Column(db.Boolean, default=True)
 
     category_id = db.Column(db.Integer, db.ForeignKey('exam_categories.id'))
@@ -85,8 +86,8 @@ class Candidate(db.Model):
     user_id = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(100), nullable=False)
-    created_at = db.Column(db.DateTime, default=utc_now)
-    updated_at = db.Column(db.DateTime, default=utc_now, onupdate=utc_now)
+    created_at = db.Column(db.DateTime, default=ist_now)
+    updated_at = db.Column(db.DateTime, default=ist_now, onupdate=ist_now)
     last_login_at = db.Column(db.DateTime)
     is_active = db.Column(db.Boolean, default=True)
     active_jti = db.Column(db.String(36), nullable=True)
@@ -124,7 +125,7 @@ class InterviewRound(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     batch_id = db.Column(db.Integer, db.ForeignKey('exam.batch_id'), nullable=False)
-    created_at = db.Column(db.DateTime, default=utc_now)
+    created_at = db.Column(db.DateTime, default=ist_now)
 
 # ---------------- Python MCQs ----------------
 class PythonMCQ(db.Model):
@@ -135,7 +136,7 @@ class PythonMCQ(db.Model):
     answer = db.Column(db.String(1), nullable=False)
     topic = db.Column(db.String(50), nullable=False)
     difficulty = db.Column(db.Enum(DifficultyEnum), nullable=False)
-    created_at = db.Column(db.DateTime, default=utc_now)
+    created_at = db.Column(db.DateTime, default=ist_now)
     category_name = db.Column(db.String(100))
 
     batch_id = db.Column(db.Integer, db.ForeignKey('exam.batch_id'))
@@ -152,31 +153,30 @@ class CandidateAnswer(db.Model):
     __tablename__ = 'candidate_answers'
     id = db.Column(db.Integer, primary_key=True)
     candidate_id = db.Column(db.Integer, db.ForeignKey('candidates.candidate_id'), nullable=False, index=True)
-    candidate_name = db.Column(db.String(100))  # ✅ Add this line
-    candidate_email = db.Column(db.String(100),)  # ✅ Add this line
+    candidate_name = db.Column(db.String(100))
+    candidate_email = db.Column(db.String(100))
     question_id = db.Column(db.Integer, db.ForeignKey('mcqs.id'), nullable=False, index=True)
     actual_answer = db.Column(db.String(1), nullable=False)
     selected_option = db.Column(db.String(1))
     is_saved = db.Column(db.Boolean, default=False)
     total_marks = db.Column(db.Integer, default=0)
-    answered_at = db.Column(db.DateTime, default=utc_now)
-
+    answered_at = db.Column(db.DateTime, default=ist_now)
 
 # ---------------- Candidate Exam Status ----------------
 class CandidateExamStatus(db.Model):
     __tablename__ = 'candidate_exam_status'
     id = db.Column(db.Integer, primary_key=True)
     candidate_id = db.Column(db.Integer, db.ForeignKey('candidates.candidate_id'), nullable=False)
-    candidate_name = db.Column(db.String(100))  # ✅ Add this line
-    candidate_email = db.Column(db.String(100))  # ✅ Add this line
+    candidate_name = db.Column(db.String(100))
+    candidate_email = db.Column(db.String(100))
     batch_id = db.Column(db.Integer, db.ForeignKey('exam.batch_id'), nullable=False)
-    started_at = db.Column(db.DateTime, default=utc_now)
+    started_at = db.Column(db.DateTime, default=ist_now)
     ended_at = db.Column(db.DateTime)
     correct_answers = db.Column(db.Integer, default=0)
     wrong_answers = db.Column(db.Integer, default=0)
     total_questions = db.Column(db.Integer, default=0)
     marks_obtained = db.Column(db.Integer, default=0)
-    time_taken = db.Column(db.Integer, default=0)  # In minutes
+    time_taken = db.Column(db.Integer, default=0)
     is_submitted = db.Column(db.Boolean, default=False)
 
 # ---------------- Batch Question ----------------
@@ -192,7 +192,7 @@ class AssignedMCQ(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     candidate_id = db.Column(db.Integer, db.ForeignKey('candidates.candidate_id'), nullable=False)
     question_id = db.Column(db.Integer, db.ForeignKey('mcqs.id'), nullable=False)
-    assigned_at = db.Column(db.DateTime, default=utc_now)
+    assigned_at = db.Column(db.DateTime, default=ist_now)
     assigned_by = db.Column(db.Integer, db.ForeignKey('admins.admin_id'), nullable=False)
 
     __table_args__ = (

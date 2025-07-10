@@ -101,29 +101,43 @@ class TokenRefreshAPI(MethodView):
         }), 200
 
 
-
-
-
 class CandidateProfileAPI(MethodView):
     @jwt_required()
     def get(self):
         user_id = get_jwt_identity()
         candidate = Candidate.query.filter_by(user_id=user_id).first()
+
         if not candidate:
             return jsonify({"error": "Candidate not found"}), 404
 
         if not candidate.batches:
             return jsonify({"error": "Candidate is not assigned to any batch"}), 404
 
-        batch = candidate.batches[0]  # Assuming one batch per candidate
+        # Check for optional batch_id from query params
+        batch_id = request.args.get("batch_id")
+
+        if batch_id:
+            # Validate the candidate is assigned to that batch
+            batch = Batch.query.filter(
+                Batch.batch_id == int(batch_id),
+                Batch.candidates.any(user_id=user_id)
+            ).first()
+
+            if not batch:
+                return jsonify({"error": "Batch not found or not assigned to candidate"}), 404
+        else:
+            # Default: pick the first assigned batch
+            batch = candidate.batches[0]
 
         return jsonify({
             "candidate_name": candidate.name,
+            "batch_id": batch.batch_id,
             "batch_title": batch.title,
             "exam_start_date": batch.start_date.strftime("%d-%m-%Y"),
             "exam_end_date": batch.end_date.strftime("%d-%m-%Y"),
             "exam_duration": batch.exam_duration  # in minutes
         }), 200
+
 
 class CandidateMcqsAPI(MethodView):
     @jwt_required()
@@ -251,65 +265,89 @@ class GetAllAnswersAPI(MethodView):
 
 
 
-IST = timezone('Asia/Kolkata')
 
+
+
+from datetime import datetime, timedelta, timezone
 from flask.views import MethodView
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from flask import jsonify
-from datetime import datetime, timedelta
+from app.models import db, Candidate, CandidateAnswer, CandidateExamStatus
+
+IST = timezone(timedelta(hours=5, minutes=30))
+
 
 class StartExamAPI(MethodView):
     @jwt_required()
     def post(self):
-        user_id = get_jwt_identity()  # this is 'sai002' from login
+        user_id = get_jwt_identity()
+        now = datetime.now(IST)
+
         candidate = Candidate.query.filter_by(user_id=user_id).first()
         if not candidate:
             return jsonify({"error": "Candidate not found"}), 404
-
         if not candidate.batches:
             return jsonify({"error": "Candidate not assigned to any batch"}), 400
 
         batch = candidate.batches[0]
-        exam_duration_minutes = batch.exam_duration
+        exam_duration = batch.exam_duration
 
         status = CandidateExamStatus.query.filter_by(
             candidate_id=candidate.candidate_id,
             batch_id=batch.batch_id
         ).first()
 
-        now = datetime.now()
+        if status:
+            started_at = status.started_at
+            if started_at.tzinfo is None:
+                started_at = started_at.replace(tzinfo=IST)
+            end_time = started_at + timedelta(minutes=exam_duration)
 
-        if status and status.is_submitted:
-            return jsonify({"error": "You have already submitted this exam."}), 403
+            if status.is_submitted:
+                return jsonify({"error": "You have already submitted this exam."}), 403
 
-        if status and not status.is_submitted:
-            end_time = status.started_at + timedelta(minutes=exam_duration_minutes)
             if now >= end_time:
+                answers = CandidateAnswer.query.filter_by(candidate_id=candidate.candidate_id).all()
+                correct = sum(1 for a in answers if a.selected_option == a.actual_answer)
+                wrong = sum(1 for a in answers if a.selected_option and a.selected_option != a.actual_answer)
+
+                status.correct_answers = correct
+                status.wrong_answers = wrong
+                status.total_questions = len(answers)
+                status.marks_obtained = correct
                 status.ended_at = end_time
-                status.time_taken = exam_duration_minutes
+                status.time_taken = exam_duration
                 status.is_submitted = True
+                candidate.tab_switch_count = 0
+                candidate.active_jti = None
+
                 db.session.commit()
                 return jsonify({"error": "Your exam duration is over. It has been auto-submitted."}), 403
 
             return jsonify({
                 "message": "Exam already started.",
-                "started_at": status.started_at.strftime("%Y-%m-%d %H:%M:%S"),
+                "started_at": started_at.strftime("%Y-%m-%d %H:%M:%S"),
                 "ends_at": end_time.strftime("%Y-%m-%d %H:%M:%S")
             }), 200
 
-        # Start new exam
         started_at = now
-        ends_at = started_at + timedelta(minutes=exam_duration_minutes)
+        ends_at = started_at + timedelta(minutes=exam_duration)
 
         new_status = CandidateExamStatus(
             candidate_id=candidate.candidate_id,
-            
             batch_id=batch.batch_id,
             started_at=started_at,
+            ended_at=None,
+            time_taken=None,
+            correct_answers=0,
+            wrong_answers=0,
+            total_questions=0,
+            marks_obtained=0,
+            is_submitted=False,
             candidate_name=candidate.name,
-            candidate_email=candidate.email,  # Ensure email is available
-            is_submitted=False 
+            candidate_email=candidate.email
         )
+
         db.session.add(new_status)
         db.session.commit()
 
@@ -320,46 +358,44 @@ class StartExamAPI(MethodView):
         }), 200
 
 
-IST = timezone("Asia/Kolkata")
-
 class SubmitExamAPI(MethodView):
     @jwt_required()
     def post(self):
         user_id = get_jwt_identity()
-
-        # 🔍 Get Candidate
         candidate = Candidate.query.filter_by(user_id=user_id).first()
         if not candidate or not candidate.batches:
             return jsonify({"error": "Candidate not found or not assigned to any batch"}), 400
 
-        # 🔍 Get Batch
         batch = candidate.batches[0]
-        exam_duration = batch.exam_duration  # in minutes
+        exam_duration = batch.exam_duration
 
-        # 🔍 Get Exam Status
         status = CandidateExamStatus.query.filter_by(
             candidate_id=candidate.candidate_id,
-            batch_id=batch.batch_id,
-            is_submitted=False
+            batch_id=batch.batch_id
         ).first()
 
         if not status:
-            return jsonify({"message": "Exam already submitted or not started"}), 400
+            return jsonify({"error": "Exam not started"}), 400
 
-        # 🕒 Time Management
+        if status.is_submitted:
+            return jsonify({
+                "message": "You have already submitted the exam.",
+                "correct_answers": status.correct_answers,
+                "wrong_answers": status.wrong_answers,
+                "marks_obtained": status.marks_obtained,
+                "total_questions": status.total_questions,
+                "time_taken": status.time_taken
+            }), 200
+
         now = datetime.now(IST)
         started_at = status.started_at
-
         if started_at.tzinfo is None:
-            started_at = IST.localize(started_at)
+            started_at = started_at.replace(tzinfo=IST)
 
         end_time = started_at + timedelta(minutes=exam_duration)
-
-        # ✅ If time is over, cap current time to end_time
         if now > end_time:
             now = end_time
 
-        # 📊 Evaluate answers
         answers = CandidateAnswer.query.filter_by(candidate_id=candidate.candidate_id).all()
         correct, wrong, total_marks = 0, 0, 0
         for ans in answers:
@@ -371,12 +407,9 @@ class SubmitExamAPI(MethodView):
                     wrong += 1
 
         total_questions = len(answers)
-
-        # ✅ Calculate time taken (in minutes), ensure non-negative
         time_taken_seconds = (now - started_at).total_seconds()
         time_taken = max(0, int(time_taken_seconds // 60))
 
-        # ✅ Update Exam Status
         status.correct_answers = correct
         status.wrong_answers = wrong
         status.total_questions = total_questions
@@ -385,9 +418,8 @@ class SubmitExamAPI(MethodView):
         status.time_taken = time_taken
         status.is_submitted = True
 
-        # ✅ Reset tab switch count and logout candidate
         candidate.tab_switch_count = 0
-        candidate.active_jti = None  # Logs out the candidate (JWT revoked)
+        candidate.active_jti = None
 
         db.session.commit()
 
@@ -399,11 +431,6 @@ class SubmitExamAPI(MethodView):
             "total_questions": total_questions,
             "time_taken": time_taken
         }), 200
-
-
-
-IST = timezone("Asia/Kolkata")
-
 class TabSwitching(MethodView):
     @jwt_required()
     def post(self):
@@ -432,12 +459,33 @@ class TabSwitching(MethodView):
 
         started_at = status.started_at
         if started_at.tzinfo is None:
-            started_at = IST.localize(started_at)
+            started_at = started_at.replace(tzinfo=IST)
 
         if candidate.tab_switch_count >= 4:
+            # Auto-submit logic
+            answers = CandidateAnswer.query.filter_by(candidate_id=candidate.candidate_id).all()
+            correct, wrong, total_marks = 0, 0, 0
+            for ans in answers:
+                if ans.selected_option:
+                    if ans.selected_option == ans.actual_answer:
+                        correct += 1
+                        total_marks += 1
+                    else:
+                        wrong += 1
+
+            total_questions = len(answers)
+            time_taken_seconds = (now - started_at).total_seconds()
+            time_taken = max(0, int(time_taken_seconds // 60))
+
+            # Save to status
+            status.correct_answers = correct
+            status.wrong_answers = wrong
+            status.total_questions = total_questions
+            status.marks_obtained = total_marks
             status.ended_at = now
-            status.time_taken = int((now - started_at).total_seconds() / 60)
+            status.time_taken = time_taken
             status.is_submitted = True
+
             candidate.active_jti = None
             db.session.commit()
 
@@ -445,7 +493,12 @@ class TabSwitching(MethodView):
                 "message": "You switched tabs too many times. Exam is auto-submitted.",
                 "tab_switch_count": candidate.tab_switch_count,
                 "auto_submitted": True,
-                "disqualified": True
+                "disqualified": True,
+                "correct_answers": correct,
+                "wrong_answers": wrong,
+                "marks_obtained": total_marks,
+                "total_questions": total_questions,
+                "time_taken": time_taken
             }), 403
 
         return jsonify({
