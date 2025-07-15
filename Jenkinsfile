@@ -33,7 +33,7 @@ pipeline {
         stage("build") {
             steps {
                 dir('backend') {
-                    sh "docker build -t myback2:latest ."
+                    sh "docker build -t myback4:latest ."
                 }
             }
         }
@@ -50,8 +50,8 @@ pipeline {
                     passwordVariable: "dockerHubPass"
                 )]) {
                     sh "docker login -u $dockerHubUser -p $dockerHubPass"
-                    sh "docker tag myback2 $dockerHubUser/myback2:latest"
-                    sh "docker push $dockerHubUser/myback2:latest"
+                    sh "docker tag myback4 $dockerHubUser/myback4:latest"
+                    sh "docker push $dockerHubUser/myback4:latest"
                 }
             }
         }
