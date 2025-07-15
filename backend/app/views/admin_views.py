@@ -503,9 +503,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 
-def send_exam_email(to_email, user_id, raw_password, exam_link, start_time, end_time):
+def send_exam_email(to_email, user_id, raw_password, exam_link, start_date, end_date):
     subject = "Your Technical Assessment Login Details – Shamghar Software Solutions (via ARCAP REIT)"
-    
+
     html_body = f"""
     <html>
     <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
@@ -517,35 +517,9 @@ def send_exam_email(to_email, user_id, raw_password, exam_link, start_time, end_
             <li><strong>🔗 Exam Link:</strong> <a href="{exam_link}" target="_blank">{exam_link}</a></li>
             <li><strong>👤 User ID:</strong> {user_id}</li>
             <li><strong>🔒 Password:</strong> {raw_password}</li>
-            <li><strong>🕒 Exam Time:</strong> {start_time} – {end_time} IST</li>
+            <li><strong>🕒 Exam Window:</strong> {start_date.strftime('%d-%m-%Y')} – {end_date.strftime('%d-%m-%Y')} IST</li>
         </ul>
-
-        <h3 style="color: red;">⚠ Strict Exam Guidelines – Must Follow:</h3>
-        <ul>
-            <li><strong>No Tab Switching:</strong> Switching tabs/windows or minimizing may disqualify your session.</li>
-            <li><strong>Web Camera Must Remain Active:</strong> Keep the exam tab open and in focus throughout.</li>
-            <li><strong>One-Time Access Only:</strong> The link is valid for one login during the scheduled time.</li>
-        </ul>
-
-        <h3>🖥 Technical Requirements:</h3>
-        <ul>
-            <li>Use a <strong>laptop or desktop (preferred)</strong></li>
-            <li>Ensure a <strong>stable internet connection</strong></li>
-            <li>Avoid all interruptions during the test</li>
-        </ul>
-
-        <h3>🔒 Confidentiality Notice:</h3>
-        <p>This exam link and credentials are strictly confidential. Do not share them with anyone. Any attempt to manipulate the process will result in disqualification and further action.</p>
-
-        <h3>For technical support or login issues:</h3>
-        <ul>
-            <li>📧 Email: <a href="mailto:hra@arcap.info">hra@arcap.info</a></li>
-            <li>🌐 Website: <a href="https://www.arcap.info" target="_blank">www.arcap.info</a></li>
-        </ul>
-
-        <p>Wishing you all the best for your assessment!</p>
-
-        <p>Warm regards,<br><strong>Team Shamghar Software Solutions</strong><br>In association with <strong>ARCAP REIT</strong></p>
+        ...
     </body>
     </html>
     """
