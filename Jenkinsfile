@@ -9,26 +9,26 @@ pipeline {
                 git url: "https://github.com/Swayamnakshane/final-backend.git", branch: "new3back"
             }
         }
-        stage("SonarQube Analysis") {
-    steps {
-        withSonarQubeEnv("sonar") {
-            script {
-                try {
-                    sh """
-                        ${SONAR_HOME}/bin/sonar-scanner \
-                        -Dsonar.projectName=myfront3 \
-                        -Dsonar.projectKey=myfront3 \
-                        -X
-                    """
-                } catch (e) {
-                    echo "⚠️ SonarQube scan failed. See logs above for details."
-                    // You can choose to fail the build here if it's critical:
-                    // error("SonarQube analysis failed")
-                }
-            }
-        }
-    }
-}
+//         stage("SonarQube Analysis") {
+//     steps {
+//         withSonarQubeEnv("sonar") {
+//             script {
+//                 try {
+//                     sh """
+//                         ${SONAR_HOME}/bin/sonar-scanner \
+//                         -Dsonar.projectName=myfront3 \
+//                         -Dsonar.projectKey=myfront3 \
+//                         -X
+//                     """
+//                 } catch (e) {
+//                     echo "⚠️ SonarQube scan failed. See logs above for details."
+//                     // You can choose to fail the build here if it's critical:
+//                     // error("SonarQube analysis failed")
+//                 }
+//             }
+//         }
+//     }
+// }
 
         stage("build") {
             steps {
