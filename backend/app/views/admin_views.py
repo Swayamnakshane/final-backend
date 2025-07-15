@@ -484,36 +484,68 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+
+SMTP_SERVER = 'smtp.gmail.com'
+SMTP_PORT = 587
+SMTP_EMAIL = 'madhu.amunik@gmail.com'
+SMTP_PASSWORD = 'jwtthzobwzfiwzey'
+EXAM_LINK = 'https://34.219.21.193.nip.io:8080/' 
+
 # Constants
-SMTP_SERVER = 'arcap.info'
-SMTP_PORT = 465
-SMTP_EMAIL = 'hra@arcap.info'
-SMTP_PASSWORD = 'Ganesh@arcap2025'
-EXAM_LINK = 'http://34.219.21.193:3000/'
+# SMTP_SERVER = 'arcap.info'
+# SMTP_PORT = 465
+# SMTP_EMAIL = 'hra@arcap.info'
+# SMTP_PASSWORD = 'Ganesh@arcap2025'
+# EXAM_LINK = 'http://34.219.21.193:3000/'
 
 # Helper: Generate user_id
-def generate_user_id(name, number):
-    return f"{name.lower().replace(' ', '')[:5]}{number:03d}"
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import smtplib
 
-# Helper: Send Email
-def send_exam_email(to_email, user_id, raw_password, exam_link, start_date, end_date):
-    subject = "Your Exam Login Credentials"
+def send_exam_email(to_email, user_id, raw_password, exam_link, start_time, end_time):
+    subject = "Your Technical Assessment Login Details – Shamghar Software Solutions (via ARCAP REIT)"
+    
     html_body = f"""
     <html>
-    <body style="font-family: Arial, sans-serif; line-height: 1.6;">
-        <h2 style="color: #2E86C1;">Welcome to Your Exam Portal</h2>
-        <p>Dear Candidate,</p>
-        <p>Your login credentials for the exam are:</p>
+    <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+        <h2 style="color: #2E86C1;">Dear Candidate,</h2>
+        <p>Thank you for registering for the Technical Assessment conducted by <strong>ARCAP REIT</strong>, in collaboration with <strong>Shamghar Software Solutions</strong>.</p>
+
+        <h3>📝 Assessment Login Details</h3>
         <ul>
-            <li><strong>User ID:</strong> {user_id}</li>
-            <li><strong>Password:</strong> {raw_password}</li>
-            <li><strong>Exam Window:</strong> {start_date.strftime('%d-%m-%Y')} to {end_date.strftime('%d-%m-%Y')}</li>
+            <li><strong>🔗 Exam Link:</strong> <a href="{exam_link}" target="_blank">{exam_link}</a></li>
+            <li><strong>👤 User ID:</strong> {user_id}</li>
+            <li><strong>🔒 Password:</strong> {raw_password}</li>
+            <li><strong>🕒 Exam Time:</strong> {start_time} – {end_time} IST</li>
         </ul>
-        <p>You are allowed to take the exam anytime within the above date range.</p>
-        <p>Click the link below to begin the exam:</p>
-        <a href="{exam_link}" style="padding: 10px 15px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px;">Start Exam</a>
-        <p style="margin-top: 20px;">All the best!</p>
-        <p>Regards,<br>Exam Admin Team</p>
+
+        <h3 style="color: red;">⚠ Strict Exam Guidelines – Must Follow:</h3>
+        <ul>
+            <li><strong>No Tab Switching:</strong> Switching tabs/windows or minimizing may disqualify your session.</li>
+            <li><strong>Web Camera Must Remain Active:</strong> Keep the exam tab open and in focus throughout.</li>
+            <li><strong>One-Time Access Only:</strong> The link is valid for one login during the scheduled time.</li>
+        </ul>
+
+        <h3>🖥 Technical Requirements:</h3>
+        <ul>
+            <li>Use a <strong>laptop or desktop (preferred)</strong></li>
+            <li>Ensure a <strong>stable internet connection</strong></li>
+            <li>Avoid all interruptions during the test</li>
+        </ul>
+
+        <h3>🔒 Confidentiality Notice:</h3>
+        <p>This exam link and credentials are strictly confidential. Do not share them with anyone. Any attempt to manipulate the process will result in disqualification and further action.</p>
+
+        <h3>For technical support or login issues:</h3>
+        <ul>
+            <li>📧 Email: <a href="mailto:hra@arcap.info">hra@arcap.info</a></li>
+            <li>🌐 Website: <a href="https://www.arcap.info" target="_blank">www.arcap.info</a></li>
+        </ul>
+
+        <p>Wishing you all the best for your assessment!</p>
+
+        <p>Warm regards,<br><strong>Team Shamghar Software Solutions</strong><br>In association with <strong>ARCAP REIT</strong></p>
     </body>
     </html>
     """
@@ -530,8 +562,10 @@ def send_exam_email(to_email, user_id, raw_password, exam_link, start_date, end_
         server.login(SMTP_EMAIL, SMTP_PASSWORD)
         server.send_message(msg)
         server.quit()
+        print(f"✅ Email sent to {to_email}")
     except Exception as e:
         print(f"[Email Error] Failed to send to {to_email}: {e}")
+
 
 from werkzeug.utils import secure_filename
 
