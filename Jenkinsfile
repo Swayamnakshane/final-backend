@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage("code") {
             steps {
-                git url: "https://github.com/Swayamnakshane/final-backend.git", branch: "new3back"
+                git url: "https://github.com/Swayamnakshane/final-backend.git", branch: "new4backend"
             }
         }
 //         stage("SonarQube Analysis") {
@@ -33,7 +33,7 @@ pipeline {
         stage("build") {
             steps {
                 dir('backend') {
-                    sh "docker build -t myback5:latest ."
+                    sh "docker build -t myback7:latest ."
                 }
             }
         }
@@ -50,8 +50,8 @@ pipeline {
                     passwordVariable: "dockerHubPass"
                 )]) {
                     sh "docker login -u $dockerHubUser -p $dockerHubPass"
-                    sh "docker tag myback5 $dockerHubUser/myback5:latest"
-                    sh "docker push $dockerHubUser/myback5:latest"
+                    sh "docker tag myback7 $dockerHubUser/myback7:latest"
+                    sh "docker push $dockerHubUser/myback7:latest"
                 }
             }
         }
