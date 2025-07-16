@@ -536,7 +536,7 @@ SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
 SMTP_EMAIL = 'madhu.amunik@gmail.com'
 SMTP_PASSWORD = 'jwtthzobwzfiwzey'
-EXAM_LINK = 'http://34.219.21.193:3000/'
+EXAM_LINK = 'https://34.219.21.193.nip.io:8080/'
 IST = pytz.timezone('Asia/Kolkata')
 
 
