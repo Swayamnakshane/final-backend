@@ -485,35 +485,98 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 # Constants
-SMTP_SERVER = 'arcap.info'
+SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 465
-SMTP_EMAIL = 'hra@arcap.info'
-SMTP_PASSWORD = 'Ganesh@arcap2025'
+SMTP_EMAIL = 'madhu.amunik@gmail.com'
+SMTP_PASSWORD = 'jwtthzobwzfiwzey'
 EXAM_LINK = 'http://34.219.21.193:3000/'
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import json, pytz, random, string
+from flask import request, jsonify, send_file
+from flask.views import MethodView
+from flask_jwt_extended import jwt_required, get_jwt_identity
+from werkzeug.utils import secure_filename
+from datetime import datetime
+from io import BytesIO
+import pandas as pd
+import smtplib
+import json
+import pytz
+import pandas as pd
+import string
+import random
+from datetime import datetime
+from io import BytesIO
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from flask import request, jsonify, send_file
+from flask.views import MethodView
+from flask_jwt_extended import jwt_required, get_jwt_identity
+import smtplib
+import json
 
-# Helper: Generate user_id
-def generate_user_id(name, number):
-    return f"{name.lower().replace(' ', '')[:5]}{number:03d}"
+# Email config
+from flask.views import MethodView
+from flask import request, jsonify, send_file
+from flask_jwt_extended import jwt_required, get_jwt_identity
+from io import BytesIO
+import pandas as pd
+import json
+from datetime import datetime
+import pytz
+import random
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
-# Helper: Send Email
+# --- Constants ---
+SMTP_SERVER = 'smtp.gmail.com'
+SMTP_PORT = 587
+SMTP_EMAIL = 'madhu.amunik@gmail.com'
+SMTP_PASSWORD = 'jwtthzobwzfiwzey'
+EXAM_LINK = 'http://34.219.21.193:3000/'
+IST = pytz.timezone('Asia/Kolkata')
+
+
+# --- Email Sender ---
 def send_exam_email(to_email, user_id, raw_password, exam_link, start_date, end_date):
-    subject = "Your Exam Login Credentials"
+    subject = "Your Technical Assessment Login Details – Shamghar Software Solutions (via ARCAP REIT)"
     html_body = f"""
     <html>
     <body style="font-family: Arial, sans-serif; line-height: 1.6;">
-        <h2 style="color: #2E86C1;">Welcome to Your Exam Portal</h2>
+        <h2 style="color: #2E86C1;">Welcome to Your Technical Assessment Portal</h2>
         <p>Dear Candidate,</p>
-        <p>Your login credentials for the exam are:</p>
+        <p>Thank you for registering for the Technical Assessment conducted by <strong>ARCAP REIT</strong>, in collaboration with <strong>Shamghar Software Solutions</strong>.</p>
+        <p><strong>📝 Assessment Login Details</strong></p>
         <ul>
-            <li><strong>User ID:</strong> {user_id}</li>
-            <li><strong>Password:</strong> {raw_password}</li>
-            <li><strong>Exam Window:</strong> {start_date.strftime('%d-%m-%Y')} to {end_date.strftime('%d-%m-%Y')}</li>
+            <li><strong>🔗 Exam Link:</strong> <a href="{exam_link}">{exam_link}</a></li>
+            <li><strong>👤 User ID:</strong> {user_id}</li>
+            <li><strong>🔒 Password:</strong> {raw_password}</li>
+            <li><strong>🗓️ Exam Window:</strong> {start_date.strftime('%d-%m-%Y')} to {end_date.strftime('%d-%m-%Y')}</li>
         </ul>
-        <p>You are allowed to take the exam anytime within the above date range.</p>
-        <p>Click the link below to begin the exam:</p>
-        <a href="{exam_link}" style="padding: 10px 15px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px;">Start Exam</a>
-        <p style="margin-top: 20px;">All the best!</p>
-        <p>Regards,<br>Exam Admin Team</p>
+        <p><strong>⚠ Strict Exam Guidelines – Must Follow:</strong></p>
+        <ul>
+            <li><strong>No Tab Switching:</strong> Switching tabs or minimizing the browser may end your session or disqualify you.</li>
+            <li><strong>Web Camera Must Remain Active:</strong> Keep the exam tab open and in focus throughout.</li>
+            <li><strong>One-Time Access Only:</strong> The link is valid only for one login.</li>
+        </ul>
+        <p><strong>💻 Technical Requirements:</strong></p>
+        <ul>
+            <li>Use a laptop or desktop (preferred)</li>
+            <li>Ensure a stable internet connection</li>
+            <li>Avoid all interruptions during the test</li>
+        </ul>
+        <p><strong>🔒 Confidentiality Notice:</strong><br>
+        This exam link and credentials are strictly confidential. Do not share them with anyone.</p>
+        <p><strong>For support:</strong><br>
+        📧 hra@arcap.info<br>
+        🌐 www.arcap.info</p>
+        <p>Wishing you all the best for your assessment!</p>
+        <p>Warm regards,<br>
+        <strong>Team Shamghar Software Solutions</strong><br>
+        In association with <strong>ARCAP REIT</strong></p>
     </body>
     </html>
     """
@@ -531,12 +594,10 @@ def send_exam_email(to_email, user_id, raw_password, exam_link, start_date, end_
         server.send_message(msg)
         server.quit()
     except Exception as e:
-        print(f"[Email Error] Failed to send to {to_email}: {e}")
-
-from werkzeug.utils import secure_filename
+        raise Exception(f"[Email Error] Failed to send to {to_email}: {e}")
 
 
-IST = pytz.timezone('Asia/Kolkata')
+# --- CreateBatch API ---
 class CreateBatch(MethodView):
     @jwt_required()
     def post(self):
@@ -553,7 +614,6 @@ class CreateBatch(MethodView):
             if not title:
                 return jsonify({"error": "Title is required"}), 400
 
-            # Check batch title uniqueness
             if Batch.query.filter_by(title=title).first():
                 return jsonify({"error": f"Batch with title '{title}' already exists"}), 400
 
@@ -563,11 +623,9 @@ class CreateBatch(MethodView):
 
             total_candidates = int(request.form.get('total_candidates', len(candidates_data)))
             exam_duration = int(request.form.get('exam_duration', 60))
-
             start_date = datetime.strptime(request.form.get('start_date'), "%d-%m-%Y").date()
             end_date = datetime.strptime(request.form.get('end_date'), "%d-%m-%Y").date()
 
-            # Create new batch
             batch = Batch(
                 title=title,
                 keywords=keywords,
@@ -582,29 +640,26 @@ class CreateBatch(MethodView):
             db.session.flush()
 
             emails_sent = 0
+            sent_emails = []
             skipped_emails = []
-            used_user_ids = set()
+            invalid_emails = []
 
-            for i, candidate_info in enumerate(candidates_data):
+            for candidate_info in candidates_data:
                 name = candidate_info.get('name')
                 email = candidate_info.get('email')
 
                 if not name or not email:
-                    skipped_emails.append(email)
+                    invalid_emails.append({
+                        "name": name or "",
+                        "email": email or "",
+                        "reason": "Missing name or email"
+                    })
                     continue
 
-                # Ensure unique user_id
-                base_user_id = ''.join(name.lower().split())[:6]
-                suffix = 1
-                while True:
-                    user_id = f"{base_user_id}{str(suffix).zfill(3)}"
-                    if user_id not in used_user_ids and not Candidate.query.filter_by(user_id=user_id).first():
-                        break
-                    suffix += 1
-                used_user_ids.add(user_id)
+                user_id = email
+                email_prefix = email.split('@')[0]
+                raw_password = f"{email_prefix}@{random.randint(1000, 9999)}"
 
-                raw_password = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
-                # Store raw password directly (NOT recommended in production)
                 candidate = Candidate(
                     name=name,
                     email=email,
@@ -614,7 +669,6 @@ class CreateBatch(MethodView):
                 )
                 candidate.batches.append(batch)
                 db.session.add(candidate)
-
 
                 try:
                     send_exam_email(
@@ -626,21 +680,56 @@ class CreateBatch(MethodView):
                         end_date=end_date
                     )
                     emails_sent += 1
-                except Exception:
-                    skipped_emails.append(email)
+                    sent_emails.append({
+                        "name": name,
+                        "email": email,
+                        "user_id": user_id,
+                        "password": raw_password,
+                        "status": "Sent"
+                    })
+                except Exception as e:
+                    skipped_emails.append({
+                        "name": name,
+                        "email": email,
+                        "reason": str(e)
+                    })
 
             db.session.commit()
 
-            return jsonify({
-                "message": f"Batch '{title}' created successfully.",
-                "emails_sent": emails_sent,
-                "skipped_emails": skipped_emails
-            }), 201
+            # Always return email summary in Excel
+            output = BytesIO()
+            with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+                if sent_emails:
+                    pd.DataFrame(sent_emails).to_excel(writer, sheet_name='Sent Emails', index=False)
+                if skipped_emails:
+                    pd.DataFrame(skipped_emails).to_excel(writer, sheet_name='Unsent Emails', index=False)
+                if invalid_emails:
+                    pd.DataFrame(invalid_emails).to_excel(writer, sheet_name='Invalid Entries', index=False)
+            output.seek(0)
+
+            return send_file(
+                output,
+                download_name=f"{title}_email_report.xlsx",
+                as_attachment=True,
+                mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            )
 
         except Exception as e:
             db.session.rollback()
             return jsonify({"error": str(e)}), 500
 
+
+
+# --- Excel Parser ---
+def parse_candidates_excel(file):
+    df = pd.read_excel(file)
+    candidates = []
+    for _, row in df.iterrows():
+        candidates.append({
+            'name': row.get('name'),
+            'email': row.get('email')
+        })
+    return candidates
 
 
 from werkzeug.utils import secure_filename

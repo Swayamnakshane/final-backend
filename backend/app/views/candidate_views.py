@@ -61,21 +61,28 @@ class CandidateLoginAPI(MethodView):
         user_id = data.get("user_id")
         password = data.get("password")
 
-        candidate = Candidate.query.filter_by(user_id=user_id).first()
+        if not user_id or not password:
+            return jsonify({"error": "user_id and password are required"}), 400
 
-        
+        # ✅ Fetch first matching candidate by user_id and password
+        candidate = Candidate.query.filter_by(user_id=user_id, password=password).first()
 
-        # Get exam status
+        if not candidate:
+            return jsonify({"error": "Invalid credentials"}), 401
+
+        # ✅ Use candidate_id for token identity
+        access_token = create_access_token(identity=str(candidate.candidate_id))
+        refresh_token = create_refresh_token(identity=str(candidate.candidate_id))
+
+        # ✅ Fetch exam status
         exam_status = CandidateExamStatus.query.filter_by(
             candidate_id=candidate.candidate_id
         ).first()
 
-        access_token = create_access_token(identity=candidate.user_id)
-        refresh_token = create_refresh_token(identity=candidate.user_id)
-
         return jsonify({
             "access_token": access_token,
             "refresh_token": refresh_token,
+            "candidate_id": candidate.candidate_id,
             "is_submitted": exam_status.is_submitted if exam_status else False
         }), 200
 
@@ -104,8 +111,9 @@ class TokenRefreshAPI(MethodView):
 class CandidateProfileAPI(MethodView):
     @jwt_required()
     def get(self):
-        user_id = get_jwt_identity()
-        candidate = Candidate.query.filter_by(user_id=user_id).first()
+        candidate_id = get_jwt_identity()  # You get this from token
+
+        candidate = Candidate.query.filter_by(candidate_id=candidate_id).first()
 
         if not candidate:
             return jsonify({"error": "Candidate not found"}), 404
@@ -113,20 +121,18 @@ class CandidateProfileAPI(MethodView):
         if not candidate.batches:
             return jsonify({"error": "Candidate is not assigned to any batch"}), 404
 
-        # Check for optional batch_id from query params
+        # Optional batch_id
         batch_id = request.args.get("batch_id")
 
         if batch_id:
-            # Validate the candidate is assigned to that batch
             batch = Batch.query.filter(
                 Batch.batch_id == int(batch_id),
-                Batch.candidates.any(user_id=user_id)
+                Batch.candidates.any(candidate_id=candidate_id)
             ).first()
 
             if not batch:
                 return jsonify({"error": "Batch not found or not assigned to candidate"}), 404
         else:
-            # Default: pick the first assigned batch
             batch = candidate.batches[0]
 
         return jsonify({
@@ -135,8 +141,9 @@ class CandidateProfileAPI(MethodView):
             "batch_title": batch.title,
             "exam_start_date": batch.start_date.strftime("%d-%m-%Y"),
             "exam_end_date": batch.end_date.strftime("%d-%m-%Y"),
-            "exam_duration": batch.exam_duration  # in minutes
+            "exam_duration": batch.exam_duration
         }), 200
+
 
 
 class CandidateMcqsAPI(MethodView):
@@ -144,7 +151,7 @@ class CandidateMcqsAPI(MethodView):
     def get(self):
         candidate_id = get_jwt_identity()  # This is user_id like 'sai002'
 
-        candidate = Candidate.query.filter_by(user_id=candidate_id).first()
+        candidate = Candidate.query.filter_by(candidate_id=candidate_id).first()
         if not candidate:
             return jsonify({"error": "Candidate not found"}), 404
 
@@ -178,13 +185,13 @@ IST = timezone("Asia/Kolkata")
 class CandidateSaveAnswerAPI(MethodView):
     @jwt_required()
     def post(self):
-        user_id = get_jwt_identity()
+        candidate_id = get_jwt_identity()
         data = request.get_json()
 
         if not data or 'question_id' not in data or 'answer' not in data:
             return jsonify({"error": "Invalid input"}), 400
 
-        candidate = Candidate.query.filter_by(user_id=user_id).first()
+        candidate = Candidate.query.filter_by(candidate_id=candidate_id).first()
         if not candidate:
             return jsonify({"error": "Candidate not found"}), 404
 
@@ -239,10 +246,10 @@ class CandidateSaveAnswerAPI(MethodView):
 class GetAllAnswersAPI(MethodView):
     @jwt_required()
     def get(self):
-        user_id = get_jwt_identity()
+        candidate_id = get_jwt_identity()
 
         # Fetch candidate by user_id
-        candidate = Candidate.query.filter_by(user_id=user_id).first()
+        candidate = Candidate.query.filter_by(candidate_id=candidate_id).first()
         if not candidate:
             return jsonify({"error": "Candidate not found"}), 404
 
@@ -276,14 +283,13 @@ from app.models import db, Candidate, CandidateAnswer, CandidateExamStatus
 
 IST = timezone(timedelta(hours=5, minutes=30))
 
-
 class StartExamAPI(MethodView):
     @jwt_required()
     def post(self):
-        user_id = get_jwt_identity()
+        candidate_id = get_jwt_identity()
         now = datetime.now(IST)
 
-        candidate = Candidate.query.filter_by(user_id=user_id).first()
+        candidate = Candidate.query.filter_by(candidate_id=candidate_id).first()
         if not candidate:
             return jsonify({"error": "Candidate not found"}), 404
         if not candidate.batches:
@@ -292,6 +298,15 @@ class StartExamAPI(MethodView):
         batch = candidate.batches[0]
         exam_duration = batch.exam_duration
 
+        # ✅ Check if current date is before exam start date
+        if now.date() < batch.start_date:
+            return jsonify({"error": "Exam has not started yet. Please wait until the exam start date."}), 403
+
+        # ✅ Check if exam date is already over
+        if now.date() > batch.end_date:
+            return jsonify({"error": "Exam date is over. You cannot start the exam."}), 403
+
+        # ✅ Check if exam already started
         status = CandidateExamStatus.query.filter_by(
             candidate_id=candidate.candidate_id,
             batch_id=batch.batch_id
@@ -330,6 +345,7 @@ class StartExamAPI(MethodView):
                 "ends_at": end_time.strftime("%Y-%m-%d %H:%M:%S")
             }), 200
 
+        # ✅ Exam starting for first time
         started_at = now
         ends_at = started_at + timedelta(minutes=exam_duration)
 
@@ -358,11 +374,12 @@ class StartExamAPI(MethodView):
         }), 200
 
 
+
 class SubmitExamAPI(MethodView):
     @jwt_required()
     def post(self):
-        user_id = get_jwt_identity()
-        candidate = Candidate.query.filter_by(user_id=user_id).first()
+        candidate_id = get_jwt_identity()
+        candidate = Candidate.query.filter_by(candidate_id=candidate_id).first()
         if not candidate or not candidate.batches:
             return jsonify({"error": "Candidate not found or not assigned to any batch"}), 400
 
@@ -434,10 +451,10 @@ class SubmitExamAPI(MethodView):
 class TabSwitching(MethodView):
     @jwt_required()
     def post(self):
-        user_id = get_jwt_identity()
+        candidate_id = get_jwt_identity()
         now = datetime.now(IST)
 
-        candidate = Candidate.query.filter_by(user_id=user_id).first()
+        candidate = Candidate.query.filter_by(candidate_id=candidate_id).first()
         if not candidate:
             return jsonify({"error": "Candidate not found"}), 404
 
