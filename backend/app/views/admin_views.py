@@ -532,11 +532,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # --- Constants ---
-SMTP_SERVER = 'smtp.gmail.com'
-SMTP_PORT = 587
-SMTP_EMAIL = 'madhu.amunik@gmail.com'
-SMTP_PASSWORD = 'jwtthzobwzfiwzey'
-EXAM_LINK = 'https://34.219.21.193.nip.io:8080/'
+# --- Constants ---
+SMTP_SERVER = 'arcap.info'
+SMTP_PORT = 465  # SSL
+SMTP_EMAIL = 'hra@arcap.info'
+SMTP_PASSWORD = 'Ganesh@arcap2025'
+EXAM_LINK = 'http://34.219.21.193:3000/'
 IST = pytz.timezone('Asia/Kolkata')
 
 
@@ -554,7 +555,7 @@ def send_exam_email(to_email, user_id, raw_password, exam_link, start_date, end_
             <li><strong>🔗 Exam Link:</strong> <a href="{exam_link}">{exam_link}</a></li>
             <li><strong>👤 User ID:</strong> {user_id}</li>
             <li><strong>🔒 Password:</strong> {raw_password}</li>
-            <li><strong>🗓️ Exam Window:</strong> {start_date.strftime('%d-%m-%Y')} to {end_date.strftime('%d-%m-%Y')}</li>
+            <li><strong>🗓 Exam Window:</strong> {start_date.strftime('%d-%m-%Y')} to {end_date.strftime('%d-%m-%Y')}</li>
         </ul>
         <p><strong>⚠ Strict Exam Guidelines – Must Follow:</strong></p>
         <ul>
@@ -588,11 +589,10 @@ def send_exam_email(to_email, user_id, raw_password, exam_link, start_date, end_
     msg.attach(MIMEText(html_body, "html"))
 
     try:
-        server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
-        server.starttls()
-        server.login(SMTP_EMAIL, SMTP_PASSWORD)
-        server.send_message(msg)
-        server.quit()
+        # SSL connection (port 465)
+        with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT) as server:
+            server.login(SMTP_EMAIL, SMTP_PASSWORD)
+            server.send_message(msg)
     except Exception as e:
         raise Exception(f"[Email Error] Failed to send to {to_email}: {e}")
 
@@ -696,7 +696,7 @@ class CreateBatch(MethodView):
 
             db.session.commit()
 
-            # Always return email summary in Excel
+            # Generate email summary Excel
             output = BytesIO()
             with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
                 if sent_emails:
@@ -717,7 +717,6 @@ class CreateBatch(MethodView):
         except Exception as e:
             db.session.rollback()
             return jsonify({"error": str(e)}), 500
-
 
 
 # --- Excel Parser ---
