@@ -537,7 +537,7 @@ SMTP_SERVER = 'arcap.info'
 SMTP_PORT = 465  # SSL
 SMTP_EMAIL = 'hra@arcap.info'
 SMTP_PASSWORD = 'Ganesh@arcap2025'
-EXAM_LINK = 'https://3.145.103.155.nip.io:8080/'
+EXAM_LINK = 'http://asses.arcapreit.com'
 IST = pytz.timezone('Asia/Kolkata')
 
 
